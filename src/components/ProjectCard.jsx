@@ -24,7 +24,7 @@ function ProjectCard({ project }) {
         <h3 className="text-xl font-semibold mb-2 font-poppins text-black">
           {title}
         </h3>
-        <p className="text-gray-600 mb-4 text-just font-poppins text-justify">
+        <p className="text-gray-600 mb-4 text-just font-poppins text-just">
           {description}
         </p>
         <div className="flex space-x-2">

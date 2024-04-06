@@ -152,12 +152,12 @@ function Home() {
             id="skills"
             className="bg-white pb-10 bg-[url('/img/texture2.png')]"
           >
-            <div className="text-black rounded-none pt-24 pb-24 ">
-              <div>
-                <h1 className="font-jost text-black font-bold text-5xl">
+            <div className="text-black rounded-none pt-12 md:pt-24 pb-12 md:pb-24">
+              <div className="md:text-xl">
+                <h1 className="font-jost text-black font-bold text-3xl md:text-5xl">
                   PROFESSIONAL SKILLS
                 </h1>
-                <h2 className="font-jost font-bold text-3xl text-rose-500">
+                <h2 className="font-jost font-bold text-2xl md:text-3xl text-rose-500">
                   MY <span className="font-caveat text-black">Talent</span>
                 </h2>
               </div>
@@ -216,7 +216,7 @@ function Home() {
           <section id="Testimonial" className="bg-slate-50 pb-10 ">
             <div className="text-black rounded-none pt-24 pb-24 ">
               <div>
-                <h1 className="font-jost text-black font-bold text-5xl">
+                <h1 className="font-jost text-black font-bold text-3xl md:text-5xl">
                   Testimonial
                 </h1>
                 <h2 className="font-jost font-bold text-3xl text-rose-500">
