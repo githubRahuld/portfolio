@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ServiceCard, SocialImg } from "../components";
+import { ServiceCard, SkillCard, SocialImg } from "../components";
 
 const api =
   "https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae";
@@ -8,6 +8,7 @@ const api =
 function Home() {
   const [userData, setUserData] = useState();
   const [services, setServices] = useState([]);
+  const [skills, setSkills] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,9 +17,10 @@ function Home() {
       .then((res) => {
         setLoading(false);
         // console.log(res.data.user.services);
-        // console.log(res.data.user);
+        // console.log(res.data.user.skills);
         setUserData(res.data);
         setServices(res.data.user.services);
+        setSkills(res.data.user.skills);
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
@@ -75,7 +77,7 @@ function Home() {
             </div>
           ) : (
             <section id="about">
-              <div className="card card-side  shadow-xl text-black rounded-none pt-24 pb-24 bg-[url('/img/texture1.png')]">
+              <div className="card card-side shadow-xl text-black rounded-none pt-24 pb-24 bg-[url('/img/texture1.png')]">
                 <figure className="w-1/2 h-full">
                   <img
                     src={userData?.user?.about?.avatar?.url}
@@ -134,7 +136,56 @@ function Home() {
             </div>
           </section>
 
-          <section id="skills" className="bg-white pb-10"></section>
+          <section
+            id="skills"
+            className="bg-white pb-10 bg-[url('/img/texture2.png')]"
+          >
+            <div className="text-black rounded-none pt-24 pb-24 ">
+              <div>
+                <h1 className="font-jost text-black font-bold text-5xl">
+                  PROFESSIONAL SKILLS
+                </h1>
+                <h2 className="font-jost font-bold text-3xl text-rose-500">
+                  MY <span className="font-caveat text-black">Talent</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-4">
+              {skills.map((skill, index) => (
+                <SkillCard
+                  key={index}
+                  name={skill.name}
+                  percentage={skill.percentage}
+                  image={skill?.image?.url}
+                />
+              ))}
+            </div>
+          </section>
+
+          <section id="projects" className="bg-white pb-10 ">
+            <div className="text-black rounded-none pt-24 pb-24 ">
+              <div>
+                <h1 className="font-jost text-black font-bold text-5xl">
+                  PORTFOLIO
+                </h1>
+                <h2 className="font-jost font-bold text-3xl text-rose-500">
+                  MY <span className="font-caveat text-black">Cases</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-4">
+              {skills.map((skill, index) => (
+                <SkillCard
+                  key={index}
+                  name={skill.name}
+                  percentage={skill.percentage}
+                  image={skill?.image?.url}
+                />
+              ))}
+            </div>
+          </section>
         </>
       )}
     </>
