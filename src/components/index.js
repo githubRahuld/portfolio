@@ -5,6 +5,7 @@ import ServiceCard from "./ServiceCard";
 import SkillCard from "./SkillCard";
 import ProjectCard from "./ProjectCard";
 import Timeline from "./Timeline";
+import TestimonialCard from "./TestimonialCard";
 
 export {
   Navbar,
@@ -14,4 +15,5 @@ export {
   SkillCard,
   ProjectCard,
   Timeline,
+  TestimonialCard,
 };

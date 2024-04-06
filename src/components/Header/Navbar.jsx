@@ -4,9 +4,9 @@ import { Link as ScrollLink } from "react-scroll";
 function Navbar() {
   return (
     <>
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <div className="dropdown">
+      <div className="navbar bg-base-100 font-poppins font-bold text-xl">
+        <div className="navbar-start text-xl">
+          <div className="dropdown text-xl">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +36,26 @@ function Navbar() {
               <li>
                 <ScrollLink to="services" smooth={true} offset={50}>
                   Services
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="skills" smooth={true} offset={50}>
+                  Skills
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="projects" smooth={true} offset={50}>
+                  My Work
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="experience" smooth={true} offset={50}>
+                  Experience
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink to="Testimonial" smooth={true} offset={50}>
+                  Testimonial
                 </ScrollLink>
               </li>
             </ul>
@@ -68,6 +88,11 @@ function Navbar() {
             <li>
               <ScrollLink to="experience" smooth={true} offset={50}>
                 Experience
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="Testimonial" smooth={true} offset={50}>
+                Testimonial
               </ScrollLink>
             </li>
           </ul>

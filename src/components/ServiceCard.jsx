@@ -7,7 +7,7 @@ function ServiceCard({ userData, className }) {
         <img
           src={userData?.image?.url}
           alt="image"
-          style={{ height: "25rem", width: "25rem" }}
+          style={{ height: "20rem", width: "20rem" }}
           className={`className rounded-2xl group-hover:blur-[10px] transition-all duration-300 ease-out`}
         />
 
