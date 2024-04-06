@@ -55,6 +55,11 @@ function Navbar() {
                 Services
               </ScrollLink>
             </li>
+            <li>
+              <ScrollLink to="skills" smooth={true} offset={50}>
+                Skills
+              </ScrollLink>
+            </li>
           </ul>
         </div>
       </div>
