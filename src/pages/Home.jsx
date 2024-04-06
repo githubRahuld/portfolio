@@ -17,6 +17,7 @@ function Home() {
   const [skills, setSkills] = useState([]);
   const [projects, setProjects] = useState([]);
   const [timelines, setTimelines] = useState([]);
+  const [testimonial, setTestimonial] = useState([]);
 
   const [loading, setLoading] = useState(true);
 
@@ -194,7 +195,7 @@ function Home() {
             </div>
           </section>
 
-          <section id="Experience" className="bg-white pb-10 ">
+          <section id="Experience" className="bg-slate-50 pb-10 ">
             <div className="text-black rounded-none pt-24 pb-24 ">
               <div>
                 <h1 className="font-jost text-black font-bold text-5xl">
@@ -206,9 +207,28 @@ function Home() {
               </div>
             </div>
 
-            <div className="m-4">
+            <div className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical m-4 ">
               {timelines.map((timeline) => (
-                <Timeline key={timeline._id} {...timeline} />
+                <Timeline key={timeline._id} job={timeline} />
+              ))}
+            </div>
+          </section>
+
+          <section id="Testimonial" className="bg-slate-50 pb-10 ">
+            <div className="text-black rounded-none pt-24 pb-24 ">
+              <div>
+                <h1 className="font-jost text-black font-bold text-5xl">
+                  TimeLine
+                </h1>
+                <h2 className="font-jost font-bold text-3xl text-rose-500">
+                  MY <span className="font-caveat text-black">Experience</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical m-4 ">
+              {timelines.map((timeline) => (
+                <Timeline key={timeline._id} job={timeline} />
               ))}
             </div>
           </section>

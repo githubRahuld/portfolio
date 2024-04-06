@@ -24,6 +24,7 @@ function SkillCard({ image, name, percentage }) {
         max="100"
         value={percentage}
         className="range range-primary h-3"
+        readOnly
       />
     </div>
   );
