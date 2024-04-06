@@ -6,6 +6,7 @@ import SkillCard from "./SkillCard";
 import ProjectCard from "./ProjectCard";
 import Timeline from "./Timeline";
 import TestimonialCard from "./TestimonialCard";
+import AnimatedSection from "./AnimatedSection";
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   ProjectCard,
   Timeline,
   TestimonialCard,
+  AnimatedSection,
 };
