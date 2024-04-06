@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ServiceCard, SkillCard, SocialImg } from "../components";
+import {
+  ProjectCard,
+  ServiceCard,
+  SkillCard,
+  SocialImg,
+  Timeline,
+} from "../components";
 
 const api =
   "https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae";
@@ -9,6 +15,9 @@ function Home() {
   const [userData, setUserData] = useState();
   const [services, setServices] = useState([]);
   const [skills, setSkills] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [timelines, setTimelines] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,11 +25,14 @@ function Home() {
       .get(api)
       .then((res) => {
         setLoading(false);
-        // console.log(res.data.user.services);
-        // console.log(res.data.user.skills);
+
+        console.log(res.data.user.timeline);
+
         setUserData(res.data);
         setServices(res.data.user.services);
         setSkills(res.data.user.skills);
+        setProjects(res.data.user.projects);
+        setTimelines(res.data.user.timeline);
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
@@ -170,19 +182,33 @@ function Home() {
                   PORTFOLIO
                 </h1>
                 <h2 className="font-jost font-bold text-3xl text-rose-500">
-                  MY <span className="font-caveat text-black">Cases</span>
+                  MY <span className="font-caveat text-black">Work</span>
                 </h2>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-4">
-              {skills.map((skill, index) => (
-                <SkillCard
-                  key={index}
-                  name={skill.name}
-                  percentage={skill.percentage}
-                  image={skill?.image?.url}
-                />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 m-4">
+              {projects.map((project, index) => (
+                <ProjectCard key={index} project={project} />
+              ))}
+            </div>
+          </section>
+
+          <section id="Experience" className="bg-white pb-10 ">
+            <div className="text-black rounded-none pt-24 pb-24 ">
+              <div>
+                <h1 className="font-jost text-black font-bold text-5xl">
+                  TimeLine
+                </h1>
+                <h2 className="font-jost font-bold text-3xl text-rose-500">
+                  MY <span className="font-caveat text-black">Experience</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="m-4">
+              {timelines.map((timeline) => (
+                <Timeline key={timeline._id} {...timeline} />
               ))}
             </div>
           </section>
