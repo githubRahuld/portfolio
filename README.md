@@ -2,7 +2,7 @@
 
 #To Run this project
 1: Compress the Folder using zip compressor
-2: Type 'num install' in terminal to install dependancies
+2: Type 'npm install' in terminal to install dependancies
 3: Run project using 'npm run dev' command
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
